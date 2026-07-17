@@ -107,7 +107,7 @@ pip install -r requirements.dev.txt
 ### 6. Run the application
 
 ```bash
-uvicorn app.main:app --reload
+uvicorn app.api.v1.application:app --reload --host 0.0.0.0 --port 8001
 ```
 or
 ```bash
