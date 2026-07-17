@@ -141,8 +141,8 @@ Use descriptive branch names, use the prefix FATA01-"branch name".
 Examples
 
 ```
-feature/FATA01-user-authentication
-feature/FATA01-jobs
+dev/FATA01-user-authentication
+dev/FATA01-jobs
 feature/FATA01-companies
 fix/login-validation
 docs/update-readme
