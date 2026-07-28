@@ -190,6 +190,18 @@ Every Pull Request should:
 
 ---
 
+## Data flow diagrams
+
+Every dataflow diagrams will be on the folder docs/dfd
+Based on the flow chart please make sure to include the name e.g authentciatflow.extennsion name
+
+- Currently by default we are using mermaid js, since it's light weight and easy to code along your diagram, the files associated with mermaid js have the extension named .mmd, To run such file simple install the extension on vscode mermaidjs preview
+
+- Draw.io is another alternative for flow charts, easy to use with drag and drop    features, main goal is not the tool being used but a clear detailed visual representation of what is being implemented.
+
+___ 
+
+
 # Rules
 
 ## Do not push directly to `main or master` branch

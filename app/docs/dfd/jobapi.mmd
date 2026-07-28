@@ -1,0 +1,49 @@
+graph TD
+    %% EXTERNAL ENTITIES
+    subgraph Entities
+        Client[API Client]
+    end
+
+    %% SYSTEM BOUNDARY
+    subgraph JobAPISystem [System Boundary]
+        %% PROCESSES (Circles)
+        P1((1.1 Authentication))
+        P2((1.2 Manage Jobs))
+        P3((1.3 Manage Companies))
+        P4((1.4 Manage Applications))
+
+        %% DATA STORES (Cylinders for standard database representation)
+        DS1[(D1: Users Table)]
+        DS2[(D2: Jobs Table)]
+        DS3[(D3: Companies Table)]
+        DS4[(D4: Applications Table)]
+
+        %% INTERNAL DATA FLOWS
+        Client -- "Registration/Login Data" --> P1
+        P1 -- "Credentials Check" --> DS1
+        DS1 -- "User Record" --> P1
+        P1 -- "JWT Access Token" --> Client
+
+        Client -- "Job Data + JWT" --> P2
+        P2 -- "Create/Update/Delete Job Record" --> DS2
+        DS2 -- "Read Job Data" --> P2
+        P2 -- "Job Details" --> Client
+
+        Client -- "Company Data + JWT" --> P3
+        P3 -- "Create/Update/Delete Company Record" --> DS3
+        DS3 -- "Read Company Data" --> P3
+        P3 -- "Company Details" --> Client
+
+        Client -- "Application Data + JWT" --> P4
+        P4 -- "Validate User" --> DS1
+        DS1 -- "User Status" --> P4
+        P4 -- "Validate Job" --> DS2
+        DS2 -- "Job Status" --> P4
+        P4 -- "Create Application Record" --> DS4
+        DS4 -- "Read Application Data" --> P4
+        P4 -- "Application Confirmation" --> Client
+    end
+
+
+
+    
