@@ -1,3 +1,6 @@
 venv
 ./venv
 app/database/*.db
+__pycache__/
+*.pyc
+COMPANY_MODULE.md
